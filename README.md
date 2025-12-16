@@ -10,8 +10,6 @@ The system retrieves and ranks assessments from the SHL catalog and provides **5
 
 ---
 
-## 🔍 Pipeline Diagram
-![Pipeline Diagram](pipeline.png)
 
 **Steps:**
 1. **Scraping** → Crawl SHL catalog for Individual Test Solutions.
