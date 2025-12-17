@@ -125,7 +125,7 @@ cd shl-intelligent-recommendation
 pip install -r requirements.txt
 
 # Set environment variables
-cp .env.example .env
+cp .env .env
 
 # Run scraper
 python scraping/shl_scraper.py
