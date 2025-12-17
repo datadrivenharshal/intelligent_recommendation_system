@@ -1,31 +1,36 @@
+# Core dependencies
+fastapi==0.104.1
+uvicorn==0.24.0
+streamlit==1.28.1
+requests==2.31.0
 
-# Core app
-streamlit==1.39.0
-fastapi==0.115.0
-uvicorn[standard]==0.30.6
-python-dotenv==1.0.1
+# LLM & LangChain
+langchain
+langsmith
+langchain-groq
+langchain-community
 
-# LangChain + Providers
-langchain==0.2.12
-langchain-core==0.2.33
-langchain-community==0.2.10
-langchain-text-splitters==0.2.2
-langchain-groq==0.1.3
-langchain-huggingface==0.0.7
+# Embeddings & Retrieval
+sentence-transformers==5.2.0
+faiss-cpu==1.7.4
+rank-bm25==0.2.2
 
-# Embeddings / Reranking
-faiss-cpu==1.8.0
-sentence-transformers==3.0.1
+# Data processing
+pandas==2.1.3
+numpy==1.24.3
+scikit-learn==1.3.2
 
-# Scraping
-requests==2.32.3
-beautifulsoup4==4.12.3
-tenacity==8.5.0
+# Web scraping
+beautifulsoup4==4.12.2
+dotenv
+# Configuration
+pydantic==2.5.0
+python-multipart==0.0.6
+python-dotenv==1.0.0
 
-# API schema
-pydantic==2.8.2
+# Utilities
+tqdm==4.66.1
+pytest==7.4.3
 
-# Data / Utils
-pandas==2.2.2
-numpy==1.26.4
-openpyxl==3.1.5
+google-generativeai
+httpx
