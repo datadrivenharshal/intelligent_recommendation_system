@@ -19,11 +19,19 @@ The system uses AI to understand your requirements and suggest the most relevant
 # Sidebar for API configuration
 with st.sidebar:
     st.header("Configuration")
-    api_url = st.text_input(
+    api_url =  st.text_input(
+    "API URL",
+    value=st.session_state.get("api_url", "https://shl-recommender-api.onrender.com"),
+    help="URL of the recommendation API"
+)
+    
+    
+    """st.text_input(
         "API URL",
         value="http://localhost:8000",
         help="URL of the recommendation API"
-    )
+    )"""
+    
     
     st.divider()
     st.markdown("### Example Queries")

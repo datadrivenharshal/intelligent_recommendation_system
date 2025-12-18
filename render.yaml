@@ -1,0 +1,31 @@
+# render.yaml
+# NOTE: Removed remote $schema directive to avoid editor/network schema fetch errors.
+services:
+  # API Service
+  - type: web
+    name: shl-recommender-api
+    env: python
+    plan: free
+    region: oregon  # or singapore, frankfurt
+    buildCommand: |
+      pip install -r requirements-deploy.txt
+      # Optional: Add any build steps
+    startCommand: uvicorn api:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+    healthCheckPath: /health
+    autoDeploy: true  # Auto-deploy when production branch updates
+
+  # UI Service
+  - type: web
+    name: shl-recommender-ui
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: |
+      pip install -r requirements-deploy.txt
+    startCommand: streamlit run ui.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: API_URL
+        value: https://shl-recommender-api.onrender.com
