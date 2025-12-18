@@ -10,7 +10,7 @@ services:
     buildCommand: |
       pip install -r requirements-deploy.txt
       # Optional: Add any build steps
-    startCommand: uvicorn api:app --host 0.0.0.0 --port 10000
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.0
